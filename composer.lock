@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e34b5e750fb11d17ee385ac175a9856f",
+    "hash": "8519054134df8ab803cf955ca507ae4a",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -194,6 +194,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/jetpack/"
+        },
+        {
+            "name": "wpackagist-plugin/page-animations-and-transitions",
+            "version": "1.4",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/page-animations-and-transitions/",
+                "reference": "tags/1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/page-animations-and-transitions.1.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/page-animations-and-transitions/"
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
