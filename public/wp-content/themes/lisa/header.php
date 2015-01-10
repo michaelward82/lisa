@@ -20,7 +20,7 @@ if (is_front_page()) {
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<header class="fade-in-late">
+	<header class="<?php echo $headerClass; ?>">
 		<h1>Leigh Independant <br>Supporters Association</h1>
 		<div id="header-btns">
 			<a class="btn info" href="/find-out-more/">Find out more</a>
