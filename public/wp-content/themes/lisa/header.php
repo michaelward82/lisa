@@ -15,8 +15,6 @@ Template Name: Header
 	<header class="fade-in-late">
 		<h1>Leigh Independant <br>Supporters Association</h1>
 		<div id="header-btns">
-			<a class="btn info">Find out more</a>
-			<a class="btn info">Latest news</a>
-			<a class="btn cta inverted">Join today</a>
+			<?php wp_list_pages( $args ); ?>
 		</div>
 	</header>
