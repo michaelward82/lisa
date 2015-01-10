@@ -26,3 +26,4 @@ if (is_front_page()) {
 			<a class="btn cta inverted" href="/join/">Join today</a>
 		</div>
 	</header>
+	<div id="container" class="fade-in">

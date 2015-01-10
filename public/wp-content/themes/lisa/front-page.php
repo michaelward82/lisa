@@ -4,7 +4,7 @@ Template Name: Front Page
 */
 
 get_header(); ?>
-<div id="container" class="fade-in">
+
 	<div id="big-message">
 		<p id="big-primary"><strong>Together We Make <em>Leigh Centurions</em> Stronger</strong></p>
 		<div class="btn-group fade-in-late">
@@ -16,5 +16,5 @@ get_header(); ?>
 		</div>
 		<p id="big-secondary" class="fade-in-late"><strong>LISA uses your donations to secure the contracts of <em>key senior players</em> &amp; funds full-time playing contracts for <em>young stars</em> of the future</strong></p>
 	</div>
-</div>
+
 <?php get_footer(); ?>
