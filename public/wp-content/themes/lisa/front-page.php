@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Front Page
+*/
+
+get_header(); ?>
 <div id="container" class="fade-in">
 	<div id="big-message">
 		<p id="big-primary"><strong>Together We Make <em>Leigh Centurions</em> Stronger</strong></p>

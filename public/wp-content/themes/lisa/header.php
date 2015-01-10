@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Header
+*/
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="pan">
 <head>
