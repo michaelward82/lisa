@@ -8,6 +8,7 @@ Template Name: Header
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
