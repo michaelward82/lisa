@@ -4,9 +4,11 @@ Template Name: Header
 */
 
 $htmlClass = '';
+$headerClass = 'fade-in';
 
 if (is_front_page()) {
 	$htmlClass = 'pan';
+	$headerClass = 'fade-in-late';
 }
 ?>
 <!DOCTYPE html>
