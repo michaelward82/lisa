@@ -1,15 +1,12 @@
-<?php
-/*
-Template Name: Page
-*/
-?>
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<?php get_header(); ?>
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<?php while ( have_posts() ) : the_post(); ?>
+	<h1 class="entry-title"><?php the_title(); ?></h1>
 
-	<?php get_template_part( 'content', 'page' ); ?>
+	<div class="content">
+		<?php the_content(); ?>
+	</diva><!-- .entry-content -->
+</div><!-- #post-## -->
 
 <?php endwhile; // end of the loop. ?>
-
-<?php get_footer(); ?>
