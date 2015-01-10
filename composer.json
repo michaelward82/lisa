@@ -8,7 +8,7 @@
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
         "wpackagist-plugin/authy-two-factor-authentication": "~2",
         "wpackagist-theme/ward": "~1",
-        "wpackagist-plugin/page-animations-and-transitions": "~1"
+        "wpackagist-plugin/page-menu-editor": "~2"
     },
     "repositories": [
         {
