@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f7b44c46cd4d1a8faa1e89bbe6c4d33c",
+    "hash": "10155f06da7bcfd3e5a375416acba1e9",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -156,26 +156,6 @@
             "time": "2013-03-15 17:51:14"
         },
         {
-            "name": "wpackagist-plugin/authy-two-factor-authentication",
-            "version": "2.5.4",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/authy-two-factor-authentication/",
-                "reference": "tags/2.5.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/authy-two-factor-authentication.2.5.4.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/authy-two-factor-authentication/"
-        },
-        {
             "name": "wpackagist-plugin/jetpack",
             "version": "3.3",
             "source": {
@@ -194,26 +174,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/jetpack/"
-        },
-        {
-            "name": "wpackagist-plugin/page-menu-editor",
-            "version": "2.1.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/page-menu-editor/",
-                "reference": "tags/2.1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/page-menu-editor.2.1.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/page-menu-editor/"
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
@@ -254,26 +214,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wpro/"
-        },
-        {
-            "name": "wpackagist-theme/ward",
-            "version": "1.0.6",
-            "source": {
-                "type": "svn",
-                "url": "http://themes.svn.wordpress.org/ward/",
-                "reference": "1.0.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://wordpress.org/themes/download/ward.1.0.6.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "http://wordpress.org/themes/ward/"
         }
     ],
     "packages-dev": [],
