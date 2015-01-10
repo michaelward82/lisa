@@ -2,6 +2,17 @@
 /*
 Template Name: Header
 */
+
+$args = array(
+	'depth'       => 0,
+	'sort_column' => 'menu_order, post_title',
+	'menu_class'  => 'menu',
+	'include'     => '',
+	'exclude'     => '',
+	'echo'        => true,
+	'show_home'   => false,
+	'link_before' => '',
+	'link_after'  => '' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="pan">
