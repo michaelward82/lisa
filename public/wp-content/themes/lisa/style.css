@@ -1,0 +1,278 @@
+/*
+Theme Name: LISA
+Theme URI:
+Author: michaelward82
+Author URI: http://leythers.com/
+Description: LISA theme
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@font-face {
+    font-family: 'CustomTrajanProBold';
+    src: url('css/customtrajanpro-bold-webfont.eot');
+    src: url('css/customtrajanpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('css/customtrajanpro-bold-webfont.woff2') format('woff2'),
+    url('css/customtrajanpro-bold-webfont.woff') format('woff'),
+    url('css/customtrajanpro-bold-webfont.ttf') format('truetype'),
+    url('css/customtrajanpro-bold-webfont.svg#customtrajanprobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AvenirRegular';
+    src: url('css/avenir-regular-webfont.eot');
+    src: url('css/avenir-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('css/avenir-regular-webfont.woff2') format('woff2'),
+    url('css/avenir-regular-webfont.woff') format('woff'),
+    url('css/avenir-regular-webfont.ttf') format('truetype'),
+    url('css/avenir-regular-webfont.svg#avenirregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@keyframes pulse_animation {
+    from { box-shadow: 0 0 18px; }
+    50% { box-shadow: 0 0 4px; }
+    to { box-shadow: 0 0 18px; }
+}
+@-webkit-keyframes pulse_animation {
+    from { box-shadow: 0 0 18px; }
+    50% { box-shadow: 0 0 4px; }
+    to { box-shadow: 0 0 18px; }
+}
+@-moz-keyframes pulse_animation {
+    from { box-shadow: 0 0 18px; }
+    50% { box-shadow: 0 0 4px; }
+    to { box-shadow: 0 0 18px; }
+}
+
+@keyframes background_move {
+    from { background-position: bottom left; }
+    to { background-position: top center; }
+}
+@-webkit-keyframes background_move {
+    from { background-position: bottom left; }
+    to { background-position: top center; }
+}
+@-moz-keyframes background_move {
+    from { background-position: bottom left; }
+    to { background-position: top center; }
+}
+
+@keyframes content_fade_in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-webkit-keyframes content_fade_in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-moz-keyframes content_fade_in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+html {
+    background: url(css/winners_6.jpg) no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+body {
+    margin: 0 0 80px 0;
+    font-family: AvenirRegular;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #300002;
+    border-bottom: 2px solid #fff;
+    box-shadow: 0 0 9px #000;
+    color: #fff;
+    height: 94px;
+}
+#header-btns {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+}
+h1 {
+    display: inline-block;
+    margin: 0;
+    padding: 12px 20px;
+    font-family: AvenirRegular;
+    font-weight: normal;
+    line-height: 1.1;
+}
+#container {
+    margin: 0 auto;
+    padding-top: 114px;
+    width: 960px;
+}
+#big-message {
+    margin-top: 120px;
+    color: #fff;
+    text-align: center;
+}
+#big-primary {
+    margin: 0;
+    text-shadow: rgba(0, 0, 0, 0.7) 0 0 6px;
+    font-family: CustomTrajanProBold;
+    font-size: 64px;
+}
+#big-primary strong,
+#big-secondary strong {
+    font-weight: normal;
+}
+#big-primary em {
+    color: red;
+    font-style: normal;
+}
+#big-secondary {
+    margin-top: 80px;
+    padding: 20px;
+    font-size: 26px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+}
+#big-secondary em {
+    color: red;
+    font-style: normal;
+    font-weight: bold;
+}
+#big-message .btn-info {
+    font-size: 22px;
+}
+#big-message .btn {
+    font-size: 30px;
+}
+#big-message .btn-group {
+    margin-top: 120px;
+}
+.btn {
+    display: inline-block;
+    margin: 0 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.btn:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+.info {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3A79AE, #2E6794);
+    background-image: -moz-linear-gradient(top, #3A79AE, #2E6794);
+    background-image: -ms-linear-gradient(top, #3A79AE, #2E6794);
+    background-image: -o-linear-gradient(top, #3A79AE, #2E6794);
+    background-image: linear-gradient(to bottom, #3A79AE, #2E6794);
+}
+.info:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #4580B2, #396E9A);
+    background-image: -moz-linear-gradient(top, #4580B2, #396E9A);
+    background-image: -ms-linear-gradient(top, #4580B2, #396E9A);
+    background-image: -o-linear-gradient(top, #4580B2, #396E9A);
+    background-image: linear-gradient(to bottom, #4580B2, #396E9A);
+}
+.cta {
+    background: #4CC22E;
+    background-image: -webkit-linear-gradient(top, #4CC22E, #40A427);
+    background-image: -moz-linear-gradient(top, #4CC22E, #40A427);
+    background-image: -ms-linear-gradient(top, #4CC22E, #40A427);
+    background-image: -o-linear-gradient(top, #4CC22E, #40A427);
+    background-image: linear-gradient(to bottom, #4CC22E, #40A427);
+}
+.cta:hover {
+    background: #56C53B;
+    background-image: -webkit-linear-gradient(top, #56C53B, #4AAA34);
+    background-image: -moz-linear-gradient(top, #56C53B, #4AAA34);
+    background-image: -ms-linear-gradient(top, #56C53B, #4AAA34);
+    background-image: -o-linear-gradient(top, #56C53B, #4AAA34);
+    background-image: linear-gradient(to bottom, #56C53B, #4AAA34);
+}
+.cta.inverted {
+    color: #4CC22E;
+    background: #fff;
+}
+.cta.inverted:hover {
+    color: #37e84c;
+    background: #fff;
+}
+
+.btn-group {
+    display: inline-block;
+    vertical-align: top;
+}
+.btn-group .btn {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+.btn-additional {
+    display: inline-block;
+    vertical-align: top;
+}
+.btn-additional .btn {
+    display: block;
+}
+.btn-additional .btn-info {
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-top: 5px;
+}
+.pulse {
+    animation: pulse_animation 2.5s infinite ease-in-out;
+    -webkit-animation: pulse_animation 2.5s infinite ease-in-out;
+}
+.pan {
+    animation: background_move 4s 1 ease-out;
+    -webkit-animation: background_move 4s 1 ease-out;
+}
+.fade-in {
+    animation: content_fade_in 2s 1 ease-out;
+    -webkit-animation: content_fade_in 2s 1 ease-out;
+}
+.fade-in-late {
+    opacity: 0;
+    -moz-animation-name: content_fade_in;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-delay: 4s;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-name: content_fade_in;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-delay: 4s;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: content_fade_in;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
