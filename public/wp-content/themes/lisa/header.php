@@ -2,17 +2,6 @@
 /*
 Template Name: Header
 */
-
-$args = array(
-	'depth'       => 0,
-	'sort_column' => 'menu_order, post_title',
-	'menu_class'  => 'menu',
-	'include'     => '',
-	'exclude'     => '',
-	'echo'        => true,
-	'show_home'   => false,
-	'link_before' => '',
-	'link_after'  => '' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="pan">
@@ -26,6 +15,8 @@ $args = array(
 	<header class="fade-in-late">
 		<h1>Leigh Independant <br>Supporters Association</h1>
 		<div id="header-btns">
-			<?php wp_page_menu( $args ); ?>
+			<a class="btn info" href="/find-out-more/">Find out more</a>
+			<a class="btn info" href="">Latest news</a>
+			<a class="btn cta inverted" href="/join/">Join today</a>
 		</div>
 	</header>
