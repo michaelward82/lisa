@@ -2,9 +2,15 @@
 /*
 Template Name: Header
 */
+
+$htmlClass = '';
+
+if (is_front_page()) {
+	$htmlClass = 'pan';
+}
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="pan">
+<html <?php language_attributes(); ?> class="<?php echo $htmlClass ?>">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
