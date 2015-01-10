@@ -26,6 +26,6 @@ $args = array(
 	<header class="fade-in-late">
 		<h1>Leigh Independant <br>Supporters Association</h1>
 		<div id="header-btns">
-			<?php wp_list_pages( $args ); ?>
+			<?php wp_page_menu( $args ); ?>
 		</div>
 	</header>
