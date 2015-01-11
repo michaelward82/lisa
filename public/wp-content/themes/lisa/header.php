@@ -1,7 +1,4 @@
 <?php
-/*
-Template Name: Header
-*/
 
 $htmlClass = '';
 $headerClass = 'fade-in';
