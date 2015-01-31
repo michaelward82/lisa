@@ -140,7 +140,7 @@ class WP_Scripts extends WP_Dependencies {
 		if ( ! $src )
 			return true;
 
-		$tag = "<script data-cfasync='true' type='text/javascript' src='$src'></script>\n";
+		$tag = "<script type='text/javascript' src='$src'></script>\n";
 
 		/** 
 		 * Filter the HTML script tag of an enqueued script.
