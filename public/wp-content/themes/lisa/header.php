@@ -13,7 +13,7 @@ if (is_front_page()) {
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v2" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
