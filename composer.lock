@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "03322a26e10d2614c611730e15c57e2c",
+    "hash": "95c00c566e6087c2dc10199cff0024ef",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -19,16 +19,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.0.19",
+            "version": "v1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "89d77bfbee79e16653f7162c86e602cc188471db"
+                "reference": "1bff8aa77a18f3616f468ed8000cf86a5725bac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/89d77bfbee79e16653f7162c86e602cc188471db",
-                "reference": "89d77bfbee79e16653f7162c86e602cc188471db",
+                "url": "https://api.github.com/repos/composer/installers/zipball/1bff8aa77a18f3616f468ed8000cf86a5725bac3",
+                "reference": "1bff8aa77a18f3616f468ed8000cf86a5725bac3",
                 "shasum": ""
             },
             "replace": {
@@ -70,6 +70,7 @@
                 "Hurad",
                 "MODX Evo",
                 "OXID",
+                "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
@@ -108,31 +109,11 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-11-29 01:29:17"
-        },
-        {
-            "name": "wpackagist-plugin/jetpack",
-            "version": "3.3",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/jetpack.3.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/jetpack/"
+            "time": "2015-01-11 03:51:11"
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
-            "version": "1.4.6",
+            "version": "1.5.0",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
