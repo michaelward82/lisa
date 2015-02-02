@@ -7,13 +7,17 @@ if (is_front_page()) {
 	$htmlClass = 'pan';
 	$headerClass = 'fade-in-late';
 }
+
+$style_min_css = file_get_contents('style-cachebuster.md5');
+$style_min_css = preg_replace("/\r|\n/", "", $style_min_css);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="<?php echo $htmlClass ?>">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?v2" />
+	<link rel="stylesheet" type="text/css" media="all"
+		  href="<?php bloginfo( 'stylesheet_url' );?>?cb=<?php echo $style_min_css ?>" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

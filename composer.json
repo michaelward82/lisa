@@ -38,6 +38,7 @@
             "mkdir -p tmp/public.building",
             "cp -R vendor/WordPress/WordPress/* tmp/public.building",
             "cp -R public/* tmp/public.building",
+            "support/css-cachebuster.sh",
             "touch public.built",
             "mv public.built tmp/public.old && mv tmp/public.building public.built",
             "rm -rf tmp/public.old"
