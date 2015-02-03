@@ -83,6 +83,7 @@ html {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
+    background-color: #000;
     height: 100%;
 }
 body {
