@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bc3b542fb2823734f3c5619bcf77e809",
+    "hash": "c29ad51e9d34c02273221a58b6d4bba8",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -113,48 +113,8 @@
             "time": "2015-02-18 17:17:01"
         },
         {
-            "name": "wpackagist-plugin/authy-two-factor-authentication",
-            "version": "2.5.5",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/authy-two-factor-authentication/",
-                "reference": "tags/2.5.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/authy-two-factor-authentication.2.5.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/authy-two-factor-authentication/"
-        },
-        {
-            "name": "wpackagist-plugin/jetpack",
-            "version": "3.4.3",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.4.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.3.4.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/jetpack/"
-        },
-        {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
-            "version": "1.5.3",
+            "version": "1.5.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
