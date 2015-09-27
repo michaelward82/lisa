@@ -3,7 +3,7 @@
     "description": "A template for installing and running WordPress on Heroku",
     "license": "MIT",
     "require": {
-        "hhvm": "~3.9",
+        "hhvm": "~3.5",
         "WordPress/WordPress": "*",
         "wpackagist-plugin/wpro": "~1",
         "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1"
