@@ -1,17 +1,18 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c85eeb44e221c970926ebc1853a9537c",
+    "hash": "7e724ac79347736d7e2ff96418093651",
+    "content-hash": "910cc55d0648e12198a9dca756c3ac51",
     "packages": [
         {
             "name": "WordPress/WordPress",
-            "version": "4.2.2",
+            "version": "4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.2.2.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -114,7 +115,7 @@
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
-            "version": "1.5.4",
+            "version": "1.6.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
