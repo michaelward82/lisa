@@ -3,4 +3,4 @@ public.built/
 vendor/
 .idea
 .vagrant/
-
+.DS_Store

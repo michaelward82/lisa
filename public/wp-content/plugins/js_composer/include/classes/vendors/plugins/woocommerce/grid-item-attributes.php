@@ -58,14 +58,14 @@ function vc_gitem_template_attribute_woocommerce_product( $value, $data ) {
 			$units = get_option( 'woocommerce_dimension_unit' );
 			$value = $product->length . $units . 'x' . $product->width . $units . 'x' . $product->height . $units;
 			break;
-		case 'raiting_count':
+		case 'rating_count':
 			$value = $product->get_rating_count();
 			break;
 		case 'weight':
 			$value = $product->get_weight() ? wc_format_decimal( $product->get_weight(), 2 ) : '';
 			break;
 		case 'on_sale':
-			$value = $product->is_on_sale() ? 'yes' : 'no'; // @todo change
+			$value = $product->is_on_sale() ? 'yes' : 'no'; // TODO: change
 			break;
 		default:
 			$value = $product->$data;

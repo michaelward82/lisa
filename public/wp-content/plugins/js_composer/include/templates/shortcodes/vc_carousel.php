@@ -1,26 +1,35 @@
 <?php
+/**
+ * Shortcode attributes
+ * @var $atts
+ * @var $el_class
+ * @var $posts_query
+ * @var $mode
+ * @var $speed
+ * @var $slides_per_view
+ * @var $wrap
+ * @var $autoplay
+ * @var $hide_pagination_control
+ * @var $hide_prev_next_buttons
+ * @var $layout
+ * @var $link_target
+ * @var $thumb_size
+ * @var $partial_view
+ * @var $title
+ * Shortcode class
+ * @var $this WPBakeryShortCode_Vc_Carousel
+ */
+$el_class = $posts_query = $mode = $speed = $slides_per_view =
+$wrap = $autoplay = $hide_pagination_control = $hide_prev_next_buttons =
+$layout = $link_target = $thumb_size = $partial_view = $title = '';
+
 global $vc_teaser_box;
-$posts_query = $el_class = $args = $my_query = $speed = $mode = $swiper_options = '';
-$content = $link = $layout = $thumb_size = $link_target = $slides_per_view = $wrap = '';
-$autoplay = $hide_pagination_control = $hide_prev_next_buttons = $title = '';
+
+$args = $my_query = '';
 $posts = array();
-extract( shortcode_atts( array(
-	'el_class' => '',
-	'posts_query' => '',
-	'mode' => 'horizontal',
-	'speed' => '5000',
-	'slides_per_view' => '1',
-	'swiper_options' => '',
-	'wrap' => '',
-	'autoplay' => 'no',
-	'hide_pagination_control' => '',
-	'hide_prev_next_buttons' => '',
-	'layout' => 'title,thumbnail,excerpt',
-	'link_target' => '',
-	'thumb_size' => 'thumbnail',
-	'partial_view' => '',
-	'title' => ''
-), $atts ) );
+$atts = vc_map_get_attributes( $this->getShortcode(), $atts );
+extract( $atts );
+
 global $vc_posts_grid_exclude_id;
 $vc_posts_grid_exclude_id[] = get_the_ID(); // fix recursive nesting
 if ( is_array( $posts_query ) ) {
@@ -40,7 +49,7 @@ while ( $my_query->have_posts() ) {
 	$post->id = get_the_ID();
 	$post->link = get_permalink( $post->id );
 	$post->post_type = get_post_type();
-	if ( $vc_teaser_box->getTeaserData( 'enable', $post->id ) === '1' ) {
+	if ( '1' === $vc_teaser_box->getTeaserData( 'enable', $post->id ) ) {
 		$post->custom_user_teaser = true;
 		$data = $vc_teaser_box->getTeaserData( 'data', $post->id );
 		if ( ! empty( $data ) ) {
@@ -110,32 +119,11 @@ while ( $my_query->have_posts() ) {
 	$posts[] = $post;
 }
 wp_reset_query();
-// $options = vc_parse_options_string($bxslider_options, $this->shortcode, 'bxslider_options');
-$tmp_options = vc_parse_options_string( $swiper_options, $this->shortcode, 'swiper_options' );
-// }}
 $this->setLinktarget( $link_target );
 
-// wp_enqueue_script('vc_bxslider');
-// wp_enqueue_style('vc_bxslider_css');
-// wp_enqueue_script('vc_swiper');
-// wp_enqueue_style('vc_swiper_css');
 wp_enqueue_script( 'vc_carousel_js' );
 wp_enqueue_style( 'vc_carousel_css' );
 
-$options = array();
-// Convert keys to Camel case.
-foreach ( $tmp_options as $key => $value ) {
-	$key = preg_replace( '/_([a-z])/e', "strtoupper('\\1')", $key );
-	$options[ $key ] = $value;
-}
-if ( (int) $slides_per_view > 0 ) {
-	$options['slidesPerView'] = (int) $slides_per_view;
-}
-if ( (int) $autoplay > 0 ) {
-	$options['autoplay'] = (int) $autoplay;
-}
-$options['mode'] = $mode;
-// $options['calculateHeight'] = true;
 $css_class = $this->settings['base'] . ' wpb_content_element vc_carousel_slider_' . $slides_per_view . ' vc_carousel_' . $mode . ( empty( $el_class ) ? '' : ' ' . $el_class );
 $carousel_id = 'vc_carousel-' . WPBakeryShortCode_Vc_Carousel::getCarouselIndex();
 ?>
@@ -145,10 +133,10 @@ $carousel_id = 'vc_carousel-' . WPBakeryShortCode_Vc_Carousel::getCarouselIndex(
 			<?php echo wpb_widget_title( array( 'title' => $title, 'extraclass' => 'wpb_gallery_heading' ) ) ?>
 			<div id="<?php echo $carousel_id ?>" data-ride="vc_carousel"
 			     data-wrap="<?php echo $wrap === 'yes' ? 'true' : 'false' ?>"
-			     data-interval="<?php echo $autoplay == 'yes' ? $speed : 0 ?>" data-auto-height="true"
+			     data-interval="<?php echo $autoplay === 'yes' ? $speed : 0 ?>" data-auto-height="true"
 			     data-mode="<?php echo $mode ?>" data-partial="<?php echo $partial_view === 'yes' ? 'true' : 'false' ?>"
 			     data-per-view="<?php echo $slides_per_view ?>"
-			     data-hide-on-end="<?php echo $autoplay == 'yes' ? 'false' : 'true' ?>" class="vc_carousel vc_slide">
+			     data-hide-on-end="<?php echo $autoplay === 'yes' ? 'false' : 'true' ?>" class="vc_carousel vc_slide">
 				<?php if ( $hide_pagination_control !== 'yes' ): ?>
 					<!-- Indicators -->
 					<ol class="vc_carousel-indicators">
@@ -156,7 +144,7 @@ $carousel_id = 'vc_carousel-' . WPBakeryShortCode_Vc_Carousel::getCarouselIndex(
 							<li data-target="#<?php echo $carousel_id ?>" data-slide-to="<?php echo $i ?>"></li>
 						<?php endfor; ?>
 					</ol>
-				<?php endif; ?>
+				<?php endif ?>
 				<!-- Wrapper for slides -->
 				<div class="vc_carousel-inner">
 					<div class="vc_carousel-slideline">
@@ -177,7 +165,7 @@ $carousel_id = 'vc_carousel-' . WPBakeryShortCode_Vc_Carousel::getCarouselIndex(
 						</div>
 					</div>
 				</div>
-				<?php if ( $hide_prev_next_buttons !== 'yes' ): ?>
+				<?php if ( 'yes' !== $hide_prev_next_buttons ): ?>
 					<!-- Controls -->
 					<a class="vc_left vc_carousel-control" href="#<?php echo $carousel_id ?>" data-slide="prev">
 						<span class="icon-prev"></span>
@@ -185,8 +173,7 @@ $carousel_id = 'vc_carousel-' . WPBakeryShortCode_Vc_Carousel::getCarouselIndex(
 					<a class="vc_right vc_carousel-control" href="#<?php echo $carousel_id ?>" data-slide="next">
 						<span class="icon-next"></span>
 					</a>
-				<?php endif; ?>
+				<?php endif ?>
 			</div>
 		</div>
 	</div>
-<?php return; ?>

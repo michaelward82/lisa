@@ -21,6 +21,7 @@ class WPBakeryShortCode_VC_Row extends WPBakeryShortCode {
 
 	protected function shortcodeScripts() {
 		wp_register_script( 'vc_jquery_skrollr_js', vc_asset_url( 'lib/bower/skrollr/dist/skrollr.min.js' ), array( 'jquery' ), WPB_VC_VERSION, true );
+		wp_register_script( 'vc_youtube_iframe_api_js', 'https://www.youtube.com/iframe_api', array(), WPB_VC_VERSION, true );
 	}
 
 	protected function content( $atts, $content = null ) {
@@ -75,7 +76,6 @@ class WPBakeryShortCode_VC_Row extends WPBakeryShortCode {
 			$row_edit_clone_delete .= $controls_delete . $controls_clone . $controls_edit . $controls_toggle;
 			$row_edit_clone_delete .= '</span>';
 
-			//$column_controls_full =  $controls_start. $controls_move . $controls_center_start . $controls_layout . $controls_delete . $controls_clone . $controls_edit . $controls_center_end . $controls_end;
 			$output .= $controls_move . $controls_layout . $controls_add . $row_edit_clone_delete . $controls_end;
 		}
 
@@ -95,7 +95,7 @@ class WPBakeryShortCode_VC_Row extends WPBakeryShortCode {
 			$output .= str_replace( "%column_size%", 1, $column_controls );
 			$output .= '<div class="wpb_element_wrapper">';
 			$output .= '<div class="vc_row vc_row-fluid wpb_row_container vc_container_for_children">';
-			if ( $content == '' && ! empty( $this->settings["default_content_in_template"] ) ) {
+			if ( $content === '' && ! empty( $this->settings["default_content_in_template"] ) ) {
 				$output .= do_shortcode( shortcode_unautop( $this->settings["default_content_in_template"] ) );
 			} else {
 				$output .= do_shortcode( shortcode_unautop( $content ) );
@@ -136,6 +136,18 @@ class WPBakeryShortCode_VC_Row extends WPBakeryShortCode {
 		return '';
 	}
 
+	/**
+	 * @deprecated and will be removed in 4.7
+	 *
+	 * @param string $bg_image
+	 * @param string $bg_color
+	 * @param string $bg_image_repeat
+	 * @param string $font_color
+	 * @param string $padding
+	 * @param string $margin_bottom
+	 *
+	 * @return string
+	 */
 	public function buildStyle( $bg_image = '', $bg_color = '', $bg_image_repeat = '', $font_color = '', $padding = '', $margin_bottom = '' ) {
 		$has_image = false;
 		$style = '';
@@ -147,27 +159,24 @@ class WPBakeryShortCode_VC_Row extends WPBakeryShortCode {
 			$style .= vc_get_css_color( 'background-color', $bg_color );
 		}
 		if ( ! empty( $bg_image_repeat ) && $has_image ) {
-			if ( $bg_image_repeat === 'cover' ) {
+			if ( 'cover' === $bg_image_repeat ) {
 				$style .= "background-repeat:no-repeat;background-size: cover;";
-			} elseif ( $bg_image_repeat === 'contain' ) {
+			} elseif ( 'contain' === $bg_image_repeat ) {
 				$style .= "background-repeat:no-repeat;background-size: contain;";
-			} elseif ( $bg_image_repeat === 'no-repeat' ) {
+			} elseif ( 'no-repeat' === $bg_image_repeat ) {
 				$style .= 'background-repeat: no-repeat;';
 			}
 		}
 		if ( ! empty( $font_color ) ) {
-			$style .= vc_get_css_color( 'color', $font_color ); // 'color: '.$font_color.';';
+			$style .= vc_get_css_color( 'color', $font_color );
 		}
-		if ( $padding != '' ) {
+		if ( $padding !== '' ) {
 			$style .= 'padding: ' . ( preg_match( '/(px|em|\%|pt|cm)$/', $padding ) ? $padding : $padding . 'px' ) . ';';
 		}
-		if ( $margin_bottom != '' ) {
+		if ( $margin_bottom !== '' ) {
 			$style .= 'margin-bottom: ' . ( preg_match( '/(px|em|\%|pt|cm)$/', $margin_bottom ) ? $margin_bottom : $margin_bottom . 'px' ) . ';';
 		}
 
-		return empty( $style ) ? $style : ' style="' . esc_attr( $style ) . '"';
+		return empty( $style ) ? '' : ' style="' . esc_attr( $style ) . '"';
 	}
 }
-
-
-

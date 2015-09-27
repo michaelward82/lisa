@@ -1,47 +1,48 @@
 {
-    "name": "xyu/heroku-wp",
-    "description": "A template for installing and running WordPress on Heroku",
-    "license": "MIT",
-    "require": {
-        "hhvm": "~3.5",
-        "WordPress/WordPress": "*",
-        "wpackagist-plugin/wpro": "~1",
-        "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1"
-    },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "WordPress/WordPress",
-                "version": "4.3.1",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.3.1.zip"
-                }
-            }
-        },
-        {
-            "type":"composer",
-            "url":"http://wpackagist.org"
+  "name": "xyu/heroku-wp",
+  "description": "A template for installing and running WordPress on Heroku",
+  "license": "MIT",
+  "require": {
+    "hhvm": "~3.5",
+    "nginx": "*",
+    "WordPress/WordPress": "*",
+    "wpackagist-plugin/wpro": "~1",
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1"
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "WordPress/WordPress",
+        "version": "4.3.1",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/WordPress/WordPress/archive/4.3.1.zip"
         }
-    ],
-    "extra": {
-        "installer-paths": {
-            "vendor/WordPress/WordPress/wp-content/mu-plugins/{$name}/": [ "type:wordpress-muplugin" ],
-            "vendor/WordPress/WordPress/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ],
-            "vendor/WordPress/WordPress/wp-content/themes/{$name}/": [ "type:wordpress-theme" ]
-        }
+      }
     },
-    "scripts": {
-        "post-install-cmd": [
-            "rm -rf tmp/public.building tmp/public.old",
-            "mkdir -p tmp/public.building",
-            "cp -R vendor/WordPress/WordPress/* tmp/public.building",
-            "cp -R public/* tmp/public.building",
-            "support/css-cachebuster.sh",
-            "touch public.built",
-            "mv public.built tmp/public.old && mv tmp/public.building public.built",
-            "rm -rf tmp/public.old"
-        ]
+    {
+      "type":"composer",
+      "url":"http://wpackagist.org"
     }
+  ],
+  "extra": {
+    "installer-paths": {
+      "vendor/WordPress/WordPress/wp-content/mu-plugins/{$name}/": [ "type:wordpress-muplugin" ],
+      "vendor/WordPress/WordPress/wp-content/plugins/{$name}/": [ "type:wordpress-plugin" ],
+      "vendor/WordPress/WordPress/wp-content/themes/{$name}/": [ "type:wordpress-theme" ]
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "rm -rf tmp/public.building tmp/public.old",
+      "mkdir -p tmp/public.building",
+      "cp -R vendor/WordPress/WordPress/* tmp/public.building",
+      "cp -R public/* tmp/public.building",
+      "support/css-cachebuster.sh",
+      "touch public.built",
+      "mv public.built tmp/public.old && mv tmp/public.building public.built",
+      "rm -rf tmp/public.old"
+    ]
+  }
 }

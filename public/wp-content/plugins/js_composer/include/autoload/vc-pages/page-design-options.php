@@ -27,10 +27,10 @@ function vc_check_for_custom_css_build() {
  */
 function vc_custom_css_admin_notice() {
 	global $current_screen;
-
+	vc_settings()->set('compiled_js_composer_less', '');
 	$class = 'notice notice-warning vc_settings-custom-design-notice';
 	$message_important = __( 'Important notice', 'js_composer' );
-	if ( is_object( $current_screen ) && isset( $current_screen->id ) && 'visual-composer_page_vc-color' == $current_screen->id ) {
+	if ( is_object( $current_screen ) && isset( $current_screen->id ) && 'visual-composer_page_vc-color' === $current_screen->id ) {
 		$message = __( 'You have an outdated version of Visual Composer Design Options. It is required to review and save it.', 'js_composer' );
 		$html = '<p><strong>' . esc_html( $message_important ) . '</strong>: ' . esc_html( $message ) . '</p>';
 	} else {
@@ -135,4 +135,4 @@ function vc_page_settings_desing_options_load() {
 	), WPB_VC_VERSION );
 }
 
-add_action( 'load-visual-composer_page_vc-color', 'vc_page_settings_desing_options_load' );
+add_action( 'vc_settings_tab-color', 'vc_page_settings_desing_options_load' );

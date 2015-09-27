@@ -9,7 +9,7 @@ function vc_grid_item_editor_create_post_type() {
 		require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/editor/class-vc-grid-item-editor.php' );
 		Vc_Grid_Item_Editor::createPostType();
 		add_action( 'vc_menu_page_build', 'vc_gitem_add_submenu_page' );
-		// @todo add check vendor is active
+		// TODO: add check vendor is active
 		add_filter( 'vc_vendor_qtranslate_enqueue_js_backend', 'vc_vendor_qtranslate_enqueue_js_backend_grid_editor' );
 	}
 }
@@ -83,6 +83,7 @@ function vc_grid_item_map_shortcodes() {
 	require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/class-vc-grid-item.php' );
 	$grid_item = new Vc_Grid_Item();
 	$grid_item->mapShortcodes();
+	vc_mapper()->setCheckForAccess( false );
 }
 
 /**
@@ -108,7 +109,7 @@ function vc_grid_item_get_post_type() {
  */
 function vc_grid_item_editor_shortcodes() {
 	require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/editor/class-vc-grid-item-editor.php' );
-	// @todo remove this because mapping can be based on post_type
+	// TODO: remove this because mapping can be based on post_type
 	if (
 		vc_request_param( 'vc_grid_item_editor' ) === 'true'
 		|| ( is_admin() && vc_grid_item_get_post_type() === Vc_Grid_Item_Editor::postType() )
@@ -251,6 +252,7 @@ function vc_gitem_add_submenu_page() {
  */
 function vc_gitem_menu_highlight() {
 	global $parent_file, $submenu_file, $post_type;
+	require_once vc_path_dir( 'PARAMS_DIR', 'vc_grid_item/editor/class-vc-grid-item-editor.php' );
 	if ( $post_type === Vc_Grid_Item_Editor::postType() ) {
 		$parent_file = VC_PAGE_MAIN_SLUG;
 		$submenu_file = 'edit.php?post_type=' . rawurlencode( Vc_Grid_Item_Editor::postType() );
@@ -259,3 +261,12 @@ function vc_gitem_menu_highlight() {
 }
 
 add_action( 'admin_head', 'vc_gitem_menu_highlight' );
+
+
+function vc_gitem_set_mapper_check_access() {
+	if ( 'true' === vc_post_param( 'vc_grid_item_editor' ) ) {
+		vc_mapper()->setCheckForAccess( false );
+	}
+}
+
+add_action( 'wp_ajax_vc_edit_form', 'vc_gitem_set_mapper_check_access' );
