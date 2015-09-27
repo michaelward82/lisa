@@ -4,10 +4,10 @@
   "license": "MIT",
   "require": {
     "hhvm": "~3.5",
-    "nginx": "*",
     "WordPress/WordPress": "*",
     "wpackagist-plugin/wpro": "~1",
-    "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1"
+    "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
+    "wpackagist-plugin/contact-form-7": "~4.3"
   },
   "repositories": [
     {

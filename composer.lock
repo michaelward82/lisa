@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a336dd3d1a81f68ec32f9214c228fa64",
-    "content-hash": "ee54932ade3a26bc6e8289de2b56064c",
+    "hash": "38d46b62933784135ba984408b3790b4",
+    "content-hash": "cb24ff333fc96756270c8bb47c24cb42",
     "packages": [
         {
             "name": "WordPress/WordPress",
@@ -112,6 +112,26 @@
                 "zikula"
             ],
             "time": "2015-02-18 17:17:01"
+        },
+        {
+            "name": "wpackagist-plugin/contact-form-7",
+            "version": "4.3",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/contact-form-7/",
+                "reference": "tags/4.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.4.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
             "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
