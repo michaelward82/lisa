@@ -1,6 +1,6 @@
 tmp/
 public.built/
-vendor/
+/vendor/
 .idea
 .vagrant/
 .DS_Store
